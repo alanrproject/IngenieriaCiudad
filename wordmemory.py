@@ -1,3 +1,3 @@
 
-def wordmemory():
+def WordMemory():
     pass

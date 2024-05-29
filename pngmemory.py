@@ -1,3 +1,3 @@
 
-def pngmemory():
+def PngMemory():
     pass
