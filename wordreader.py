@@ -25,6 +25,6 @@ class WordReader:
                 img = Image.open(io.BytesIO(img_data))
                 images.append(img)
 
-        return text, headings, images
+        return doc
 
 
