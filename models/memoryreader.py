@@ -8,11 +8,11 @@ class MemoryReader:
         self.memory_sheets = sheetnames
 
     def read(self):
-            memory_df = pd.read_excel('Variables para automatización memorias de calculo.xlsx', sheet_name='Vars')    
+            memory_df = pd.read_excel('raw/Variables para automatización memorias de calculo.xlsx', sheet_name='Vars')    
             return memory_df
             
     def get_tables(self, sheetname):
-        df = pd.read_excel('PE1126_Cálculos Electricos_CR.xlsx', sheet_name=sheetname)
+        df = pd.read_excel('raw/PE1126_Cálculos Electricos_CR.xlsx', sheet_name=sheetname)
         table = self.df_to_table(df)
         return table
     
