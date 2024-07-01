@@ -4,9 +4,8 @@ from docx.oxml import OxmlElement
 from docx.shared import Pt
 
 class MemoryReader:
-    def __init__(self,memory_sheets, output_file):
-        self.memory_sheets = memory_sheets
-        self.output_file = output_file
+    def __init__(self,sheetnames):
+        self.memory_sheets = sheetnames
 
     def read(self):
             memory_df = pd.read_excel('Variables para automatización memorias de calculo.xlsx', sheet_name='Vars')    

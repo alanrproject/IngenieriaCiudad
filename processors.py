@@ -1,30 +1,23 @@
 import pandas as pd
 from wordreader import WordReader
 from memoryreader import MemoryReader
-from wordmemory import WordMemory
-from pngmemory import PngMemory
-from docx import Document
 from docx.shared import Pt
-from docx.oxml import OxmlElement
-from docx.oxml.ns import qn
 
 class DocumentProcessor:
-    def __init__(self, word_path, memory_sheets, output_file):
+    def __init__(self, word_path, sheetnames):
         self.word_reader = WordReader(word_path)
-        self.memory_reader = MemoryReader(memory_sheets, output_file)
-        self.word_memory = WordMemory()
-        self.png_memory = PngMemory()
+        self.memory_reader = MemoryReader(sheetnames)
 
-    def process_document(self):
+    def process_document(self, sheetnames):
         # Leer documento word base
         doc = self.word_reader.read()  # Utiliza un método para leer el documento como objeto Document de python-docx        
         # Reemplazar valores en los párrafos de texto
         self.replace_text(doc)
-        
-        sheetnames = {'DimensionSistema':'TablaDimensionSistema',
-                      'DistCadenas':'TablaDistCadenas'}
         # Reemplazar valores en las tablas
         self.replace_in_tables(doc, sheetnames)    
+
+
+
 
         # Guardar el documento actualizado
         output_docx = 'PE1126_updated.docx'
