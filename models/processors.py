@@ -68,3 +68,5 @@ class DocumentProcessor:
                     new_paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER  # Center align the paragraph
                     run = new_paragraph.add_run()
                     run.add_picture(image_path, width=Inches(4))  # Adjust the width as needed
+
+
