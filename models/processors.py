@@ -4,7 +4,7 @@ from memoryreader import MemoryReader
 from docx.shared import Pt
 from docx.shared import Inches
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
-
+from docx.oxml.ns import qn
 
 class DocumentProcessor:
     def __init__(self, word_path, sheetnames, image_dict):
@@ -26,7 +26,7 @@ class DocumentProcessor:
 
 
         # Guardar el documento actualizado
-        output_docx = 'processed/PE1126_updated.docx'
+        output_docx = 'processed/MemoriadeCalculo_V0.docx'
         doc.save(output_docx)
         print(f"Archivo '{output_docx}' generado con éxito.")
 
@@ -47,7 +47,6 @@ class DocumentProcessor:
     def replace_in_tables(self, doc):
         for sheetname, placeholder in self.sheetnames.items():
             table = self.memory_reader.get_tables(sheetname)
-            
             if table is not None:
                 # Search and replace placeholder with table
                 for paragraph in doc.paragraphs:
@@ -55,7 +54,6 @@ class DocumentProcessor:
                         # Clear existing content in the paragraph runs
                         for run in paragraph.runs:
                             run.text = ''
-                        
                         # Insert table after the paragraph
                         paragraph._element.getparent().insert(paragraph._element.getparent().index(paragraph._element) + 1, table)
 

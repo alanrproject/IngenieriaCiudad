@@ -1,9 +1,9 @@
 from processors import DocumentProcessor
 
 def main():
-    word_path = 'raw/PE1126_Memorias de cálculo.docx'
-    sheetnames = {'DimensionSistema':'TablaDimensionSistema',
-                      'DistCadenas':'TablaDistCadenas'}
+    word_path = 'raw/MemoriadeCalculo.docx'
+    sheetnames = {'resumendelsistema':'TablaDimensionSistema',
+                      'regulaciondelsistema':'TablaDistCadenas'}
     image_dict = {'Imagen 1: Vista aérea':'raw/vistaaerea.png', #Specify the output Excel file path # Specify the output Excel file path
                   'Imagen 2: Temperatura promedio mensual':'raw/temperaturapromedio.png',
                   'Imagen 3: Caracteristícas eléctricas del módulo':'raw/caracteristicasdelmodulo.png', 
