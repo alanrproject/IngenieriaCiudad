@@ -3,7 +3,11 @@ from processors import DocumentProcessor
 def main():
     word_path = 'raw/MemoriadeCalculo.docx'
     sheetnames = {'resumendelsistema':'TablaDimensionSistema',
-                      'regulaciondelsistema':'TablaDistCadenas'}
+                      'regulaciondelsistema':'Tablaregulacionhastainversores',
+                      'distcadenas':'TablaDistCadenas',
+                      'RegulacioninvaTAC':'TablaregulacioninversoraTAC',
+                      'RegulacionTACaINT':'TablaregulacionTACaINT',
+                      'Resumencanalizaciones':'Tablaresumencanalizaciones'}
     image_dict = {'Imagen 1: Vista aérea':'raw/vistaaerea.png', #Specify the output Excel file path # Specify the output Excel file path
                   'Imagen 2: Temperatura promedio mensual':'raw/temperaturapromedio.png',
                   'Imagen 3: Caracteristícas eléctricas del módulo':'raw/caracteristicasdelmodulo.png', 
