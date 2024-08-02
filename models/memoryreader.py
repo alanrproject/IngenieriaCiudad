@@ -4,6 +4,8 @@ from openpyxl.worksheet.table import Table
 from docx.oxml import OxmlElement
 from docx import Document
 from docx.shared import Pt
+from lxml import etree
+from docx.oxml.ns import qn  # Asegúrate de importar qn para los nombres cualificados
 
 class MemoryReader:
     def __init__(self,sheetnames):
@@ -37,48 +39,28 @@ class MemoryReader:
         else:
             raise ValueError("No se encontró una tabla con formato en la hoja.")
 
-
     def df_to_table(self, df):
-        # Crear un nuevo elemento de tabla
-        tbl = OxmlElement('w:tbl')
-
-        # Agregar la cuadrícula de la tabla
-        tbl_grid = OxmlElement('w:tblGrid')
-        for _ in range(len(df.columns)):
-            grid_col = OxmlElement('w:gridCol')
-            tbl_grid.append(grid_col)
-        tbl.append(tbl_grid)
-
+        # Crear un nuevo documento y tabla
+        doc = Document()
+        tbl = doc.add_table(rows=1, cols=len(df.columns))
+        
+        # Aplicar el estilo 'Grid Table 1 Light' al objeto Table de python-docx
+        tbl.style = 'Table Grid'
+        
         # Agregar la fila de encabezado de la tabla
-        tr_header = OxmlElement('w:tr')
-        for header_text in df.columns:
-            tc_header = OxmlElement('w:tc')
-            p_header = OxmlElement('w:p')
-            run_header = OxmlElement('w:r')
-            run_header_t = OxmlElement('w:t')
-            run_header_t.text = str(header_text)
-            run_header.append(run_header_t)
-            p_header.append(run_header)
-            tc_header.append(p_header)
-            tr_header.append(tc_header)
-        tbl.append(tr_header)
-
+        hdr_cells = tbl.rows[0].cells
+        for i, header_text in enumerate(df.columns):
+            hdr_cells[i].text = str(header_text)
+            # Formato del encabezado
+            hdr_cells[i].paragraphs[0].runs[0].font.size = Pt(10)
+            hdr_cells[i].paragraphs[0].style = doc.styles['Normal']
+        
         # Agregar las filas y celdas de datos
         for _, row_data in df.iterrows():
-            tr = OxmlElement('w:tr')
-            for value in row_data:
-                tc = OxmlElement('w:tc')
-                p = OxmlElement('w:p')
-                run = OxmlElement('w:r')
-                run_t = OxmlElement('w:t')
-                run_t.text = str(value)
-                run.append(run_t)
-                p.append(run)
-                tc.append(p)
-                tr.append(tc)
-            tbl.append(tr)
-
+            row_cells = tbl.add_row().cells
+            for i, value in enumerate(row_data):
+                row_cells[i].text = str(value)
+                # Formato de las celdas de datos
+                row_cells[i].paragraphs[0].runs[0].font.size = Pt(8)
+        
         return tbl
-            
-            
-            

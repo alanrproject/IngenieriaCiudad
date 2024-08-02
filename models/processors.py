@@ -5,6 +5,7 @@ from docx.shared import Pt
 from docx.shared import Inches
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.oxml.ns import qn
+from docx import Document
 
 class DocumentProcessor:
     def __init__(self, word_path, sheetnames, image_dict):
@@ -46,16 +47,30 @@ class DocumentProcessor:
 
     def replace_in_tables(self, doc):
         for sheetname, placeholder in self.sheetnames.items():
+            # Obtener la tabla como un objeto Table de python-docx
             table = self.memory_reader.get_tables(sheetname)
+            
             if table is not None:
-                # Search and replace placeholder with table
+                # Buscar y reemplazar el marcador de posición con la tabla
                 for paragraph in doc.paragraphs:
                     if placeholder in paragraph.text:
-                        # Clear existing content in the paragraph runs
+                        # Limpiar el contenido existente en las ejecuciones del párrafo
                         for run in paragraph.runs:
                             run.text = ''
-                        # Insert table after the paragraph
-                        paragraph._element.getparent().insert(paragraph._element.getparent().index(paragraph._element) + 1, table)
+                        
+                        # Insertar la tabla después del párrafo
+                        parent_element = paragraph._element.getparent()
+                        insert_index = parent_element.index(paragraph._element) + 1
+                        
+                        # Convertir la tabla a XML y agregarla al documento
+                        tbl_xml = table._tbl  # Obtener el elemento XML de la tabla
+                        parent_element.insert(insert_index, tbl_xml)
+                        
+                        # Opcionalmente eliminar el marcador de posición del párrafo
+                        paragraph.clear()
+                        
+                        # Salir del bucle después de reemplazar el primer marcador de posición
+                        break
 
     def replace_images(self, doc):
         for placeholder, image_path in self.image_dict.items():
