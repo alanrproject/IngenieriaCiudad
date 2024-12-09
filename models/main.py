@@ -6,7 +6,7 @@ def main():
                       'regulaciondelsistema':'Tablaregulacionhastainversores',
                       'distcadenas':'TablaDistCadenas',
                       'RegulacioninvaTAC':'TablaregulacioninversoraTAC',
-                      'RegulacionTACaINT':'TablaregulacionTACaINT',
+                      'RegulacionTACaINTX':'TablaregulacionTACaINT',
                       'Resumencanalizaciones':'Tablaresumencanalizaciones'}
     image_dict = {'Imagen 1: Vista aérea':'raw/vistaaerea.png', #Specify the output Excel file path # Specify the output Excel file path
                   'Imagen 2: Temperatura promedio mensual':'raw/temperaturapromedio.png',
@@ -27,3 +27,4 @@ if __name__ == "__main__":
 
 
 
+    

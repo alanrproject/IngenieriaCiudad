@@ -1,0 +1,95 @@
+[33mcommit 0db89443d2b1bc884a31e1b7958c6cea28a04136[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: DiseoCR <jballesta@ciudadrenovable.com>
+Date:   Fri Aug 2 12:31:49 2024 -0500
+
+    Tablas con formato OK
+
+[33mcommit 0ffcdd55151c3501fcb4845d197bf272b99de354[m
+Author: DiseoCR <jballesta@ciudadrenovable.com>
+Date:   Thu Aug 1 11:50:02 2024 -0500
+
+    Codigo funcionando con tablas Ok sin formato
+
+[33mcommit 4792d2a151226ee70368704b252dede05afbfaa9[m
+Author: DiseoCR <jballesta@ciudadrenovable.com>
+Date:   Thu Aug 1 10:41:06 2024 -0500
+
+    Codigo actualizado para reconocer tablas en excel
+
+[33mcommit 30448af6af9494fbe58db4411c799fd79eef4cc7[m
+Author: DiseoCR <jballesta@ciudadrenovable.com>
+Date:   Tue Jul 9 16:54:54 2024 -0500
+
+    Adicion de imagenes hasta la imagen 9
+
+[33mcommit 272454b70b9ca208ac98ed0433d7c4ac003b6ddb[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Mon Jul 1 17:15:43 2024 -0500
+
+    requirements.txt updated
+
+[33mcommit a9f9d2a6e80c706a2ab41f80397be88955a7b51e[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Mon Jul 1 17:11:15 2024 -0500
+
+    Reemplazo de imágenes ok y estructura de carpetas ok
+
+[33mcommit 48e68f9161afc21018986aff75e905bd32eb5848[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Mon Jul 1 16:10:27 2024 -0500
+
+    Ajustes de forma en clases y funciones
+
+[33mcommit af9e5d7dd6236604c8bf1a7dbb2c4ee7d4b132ea[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Sun Jun 30 22:19:49 2024 -0500
+
+    Funcionando funciones para reemplazar texto y tablas, las tablas deben salir de una hoja de excel independiente cada una
+
+[33mcommit f7ec5f42f5339c205253590c561f4ab31ec7d634[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Sun Jun 30 20:47:03 2024 -0500
+
+    reemplazo de texto en paragraphs y texto en fórmulas ok
+
+[33mcommit 3d737ff1027714630e74bc9e5826f4d041d63538[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Sun Jun 30 20:05:14 2024 -0500
+
+    Hasta aquí se guarda el nuevo texto en un archivo nuevo pero sin estilo
+
+[33mcommit 7493f7dc6025dd3fce9c3c796129de440c67eabf[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Sun Jun 30 19:02:43 2024 -0500
+
+    Ajustes .gitignore, lectura de variables en tabla resumen
+
+[33mcommit c109e5f200c48ed2d87b66dc3788825d5e14d71a[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Sun Jun 30 17:30:39 2024 -0500
+
+    Actualización archivos Word y Excel
+
+[33mcommit ace0d15cf968fb86bf4c7a7d53a283c5b3d57889[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Wed May 29 08:19:58 2024 -0500
+
+    Ajustes POO wordreader
+
+[33mcommit 68389cc2b0e48bcc0f4f0fb4de8e42105551f021[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Wed May 29 07:06:38 2024 -0500
+
+    requirements append
+
+[33mcommit 717224dbdd65956e4da76d10647aa105aae11286[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Tue May 28 20:58:10 2024 -0500
+
+    .gitignore added
+
+[33mcommit fe8e363076af635d799c2b95df4d921d3da8d45e[m
+Author: alanrproject <alanrproject@outlook.com>
+Date:   Tue May 28 20:41:03 2024 -0500
+
+    primer commit
